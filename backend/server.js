@@ -13,7 +13,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-    origin: 'http://localhost:5173', // frontend port
+    origin: 'https://major-project-frontend-w233.onrender.com', // frontend port
     credentials: true,
 }));
   
