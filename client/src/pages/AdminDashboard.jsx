@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 
   const fetchMessages = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/messages');
+      const res = await axios.get('https://major-project-backend-okz9.onrender.com/api/messages');
       setMessages(res.data);
     } catch (err) {
       toast.error('Failed to fetch messages');
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
 
   const fetchDepartments = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/departments');
+      const res = await axios.get('https://major-project-backend-okz9.onrender.com/api/departments');
       setDepartments(res.data);
     } catch (err) {
       toast.error('Failed to fetch departments');
@@ -40,7 +40,7 @@ const AdminDashboard = () => {
       return toast.error('Message and department required!');
     }
     try {
-      await axios.post('http://localhost:5000/api/messages', {
+      await axios.post('https://major-project-backend-okz9.onrender.com/api/messages', {
         content: newMessage,
         department: newDept,
       });
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/messages/${id}`);
+      await axios.delete(`https://major-project-backend-okz9.onrender.com/api/messages/${id}`);
       toast.success('Message deleted!');
       fetchMessages();
     } catch (err) {
@@ -66,7 +66,7 @@ const AdminDashboard = () => {
   const handleEdit = async (id) => {
     if (!editContent.trim()) return toast.error('Edited message cannot be empty!');
     try {
-      await axios.put(`http://localhost:5000/api/messages/${id}`, {
+      await axios.put(`https://major-project-backend-okz9.onrender.com/api/messages/${id}`, {
         content: editContent,
       });
       setEditId(null);
