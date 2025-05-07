@@ -7,6 +7,11 @@ exports.createMessage = async (req, res) => {
   try {
     const newMessage = new Message({ content, department });
     await newMessage.save();
+
+    // ✅ Emit real-time event after saving message
+    const io = req.app.get('io');
+    io.emit('new-message', newMessage);
+
     res.status(201).json(newMessage);
   } catch (err) {
     res.status(500).json({ error: 'Failed to create message' });

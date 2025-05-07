@@ -15,6 +15,8 @@ const Register = () => {
     department: '',
   });
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const departments = ['CSE', 'ECE', 'ME', 'CE', 'EE', 'EEE', 'IT'];
 
   const handleChange = (e) => {
@@ -32,7 +34,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post('https://major-project-backend-okz9.onrender.com/api/auth/register', formData);
+      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
       toast.success('Registration successful! Redirecting...');
 
       setTimeout(() => {
@@ -71,14 +73,22 @@ const Register = () => {
           onChange={handleChange}
           className="w-full border border-gray-300 rounded-md p-2"
         />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          className="w-full border border-gray-300 rounded-md p-2"
-        />
+        <div className="relative">
+          <input
+            type={showPassword ? 'text' : 'password'}
+            name="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded-md p-2 pr-10"
+          />
+          <span
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-2.5 text-sm cursor-pointer text-gray-600 hover:text-black"
+          >
+            {showPassword ? 'Hide' : 'Show'}
+          </span>
+        </div>
         <select
           name="role"
           value={formData.role}

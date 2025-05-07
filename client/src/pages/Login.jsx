@@ -30,7 +30,7 @@ const Login = () => {
     }
 
     try {
-      const res = await axios.post('https://major-project-backend-okz9.onrender.com/api/auth/login', formData);
+      const res = await axios.post('http://localhost:5000/api/auth/login', formData);
       const user = res.data.user;
 
       // Save details in localStorage
