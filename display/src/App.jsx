@@ -85,7 +85,7 @@ const App = () => {
     <div className="w-screen h-screen bg-gradient-to-br from-primary via-secondary to-accent animate-gradient-x text-light flex flex-col justify-between overflow-hidden">
       {/* Header */}
       <header className="text-center py-6 bg-black bg-opacity-30">
-        <h1 className="text-4xl font-bold tracking-widest">IoT Based Smart Department Notice Board</h1>
+        <h1 className="text-4xl font-bold tracking-widest">SMART REAL-TIME IoT-BASED NOTICE BOARD WITH ROLE-BASED ACCESS CONTROL</h1>
       </header>
 
       {/* Department Selector */}
