@@ -15,7 +15,8 @@ const io = new Server(server, {
   cors: {
     origin: [
       'http://localhost:5173',                         // local frontend
-      'https://major-project-frontend-w233.onrender.com' // deployed frontend
+      'https://major-project-frontend-w233.onrender.com', // deployed frontend
+      'https://display-we01.onrender.com'
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
@@ -41,7 +42,8 @@ connectDB();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://major-project-frontend-w233.onrender.com'
+    'https://major-project-frontend-w233.onrender.com',
+    'https://display-we01.onrender.com'
   ],
   credentials: true
 }));
