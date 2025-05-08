@@ -108,7 +108,7 @@ const App = () => {
           onClick={handleFullscreenToggle}
           className="bg-white text-black p-2 rounded shadow-md hover:bg-light"
         >
-          {isFullscreen ? 'Exit Fullscreen' : 'Enter Fullscreen'}
+          {isFullscreen ? '><' : '<>'}
         </button>
       </div>
 
