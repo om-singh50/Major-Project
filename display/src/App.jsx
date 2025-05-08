@@ -87,7 +87,7 @@ const App = () => {
       {/* Header and Fullscreen Button */}
       <div className="relative">
         <header className="text-center py-6 bg-black bg-opacity-30">
-          <h1 className="text-4xl font-bold tracking-widest">SMART REAL-TIME IoT-BASED NOTICE BOARD WITH ROLE-BASED ACCESS CONTROL</h1>
+          <h1 className="text-4xl font-bold tracking-widest">SMART IoT-BASED NOTICE BOARD WITH ROLE-BASED ACCESS CONTROL</h1>
         </header>
 
         {/* Fullscreen toggle button placed just below header */}
