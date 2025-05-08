@@ -34,7 +34,7 @@ const Register = () => {
     }
 
     try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const res = await axios.post('https://major-project-backend-okz9.onrender.com/api/auth/register', formData);
       toast.success('Registration successful! Redirecting...');
 
       setTimeout(() => {
