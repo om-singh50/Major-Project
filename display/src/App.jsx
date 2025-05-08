@@ -6,7 +6,7 @@ const socket = io('https://major-project-backend-okz9.onrender.com'); // Change 
 const App = () => {
   const [department, setDepartment] = useState('CSE');
   const [messages, setMessages] = useState([]);
-  const [isFullscreen, setIsFullscreen] = useState(true); // State for fullscreen mode
+  const [isFullscreen, setIsFullscreen] = useState(false); // State for fullscreen mode
 
   const fetchMessages = async () => {
     try {
@@ -83,10 +83,23 @@ const App = () => {
 
   return (
     <div className="w-screen h-screen bg-gradient-to-br from-primary via-secondary to-accent animate-gradient-x text-light flex flex-col justify-between overflow-hidden">
-      {/* Header */}
-      <header className="text-center py-6 bg-black bg-opacity-30">
-        <h1 className="text-4xl font-bold tracking-widest">SMART REAL-TIME IoT-BASED NOTICE BOARD WITH ROLE-BASED ACCESS CONTROL</h1>
-      </header>
+      
+      {/* Header and Fullscreen Button */}
+      <div className="relative">
+        <header className="text-center py-6 bg-black bg-opacity-30">
+          <h1 className="text-4xl font-bold tracking-widest">SMART REAL-TIME IoT-BASED NOTICE BOARD WITH ROLE-BASED ACCESS CONTROL</h1>
+        </header>
+
+        {/* Fullscreen toggle button placed just below header */}
+        <div className="absolute top-full right-6 mt-2 z-10">
+          <button
+            onClick={handleFullscreenToggle}
+            className="bg-white text-black p-2 rounded shadow-md hover:bg-light x-2"
+          >
+            {isFullscreen ? 'Exit' : 'Fullscreen'}
+          </button>
+        </div>
+      </div>
 
       {/* Department Selector */}
       <div className="flex justify-center mt-2 z-10">
@@ -100,16 +113,6 @@ const App = () => {
           <option value="ME">ME</option>
           <option value="CE">CE</option>
         </select>
-      </div>
-
-      {/* Fullscreen toggle button */}
-      <div className="absolute top-6 right-6 z-10">
-        <button
-          onClick={handleFullscreenToggle}
-          className="bg-white text-black p-2 rounded shadow-md hover:bg-light"
-        >
-          {isFullscreen ? '><' : '<>'}
-        </button>
       </div>
 
       {/* Auto-scrolling messages */}
@@ -133,7 +136,7 @@ const App = () => {
 
       {/* Footer */}
       <footer className="text-center py-4 bg-black bg-opacity-30 z-10">
-        <p className="text-sm tracking-wider">© 2025 Smart Notice Board | Final Year Project by Om Kumar Singh and Shagun Singh under the guidance of Dr. Arun Kumar G. (HOD ECE, JSSATE Noida)</p>
+        <p className="text-sm tracking-wider">© 2025 Smart Notice Board | Final Year Project by Om Kumar Singh and Shagun Singh under the guidance of Dr. Arun Kumar G. (HOD ECE, JSSATE Noida).</p>
       </footer>
     </div>
   );
